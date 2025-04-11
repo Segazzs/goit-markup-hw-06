@@ -1104,6 +1104,11 @@ footer .logo-web-color {
     flex-direction: row;
   }
 
+  .address-link {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
   .container {
     max-width: 1128px;
     padding: 0;
