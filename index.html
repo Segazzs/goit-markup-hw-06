@@ -21,7 +21,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header class="header none">
+    <header class="header">
       <div class="header-top container">
         <nav class="header-nav">
           <a class="logo" href="./index.html"
@@ -34,21 +34,92 @@
             <li><a href="" class="header-link">Portfolio</a></li>
             <li><a href="" class="header-link">Contacts</a></li>
           </ul>
+
+          <address class="header-address" id="contacts">
+            <ul class="address-list">
+              <li class="address-item">
+                <a class="address-link" href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+              <li class="address-item">
+                <a class="address-link" href="tel:+110001111111"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+            </ul>
+          </address>
+
+          <button type="button" class="menu-btn">
+            <svg class="menu-btn-icon" width="24" height="24">
+              <use href="./images/modal.svg#icon-Group"></use>
+            </svg>
+          </button>
         </nav>
-        <address class="header-address" id="contacts">
-          <ul class="address-list">
-            <li class="address-item">
-              <a class="address-link" href="mailto:info@devstudio.com"
-                >info@devstudio.com</a
-              >
+      </div>
+
+      <div class="modal-nav">
+        <div class="modal-nav-content">
+          <button type="button" class="modal-close">
+            <svg class="modal-close-btn" width="8" height="8">
+              <use href="./images/modal.svg#icon-close-btn"></use>
+            </svg>
+          </button>
+
+          <ul class="header-links">
+            <li>
+              <a href="./index.html" class="header-link curent">Studio</a>
             </li>
-            <li class="address-item">
-              <a class="address-link" href="tel:+110001111111"
-                >+11 (000) 111-11-11</a
-              >
+            <li><a href="" class="header-link">Portfolio</a></li>
+            <li><a href="" class="header-link">Contacts</a></li>
+          </ul>
+
+          <address class="header-address" id="contacts">
+            <ul class="address-list">
+              <li class="address-item">
+                <a class="address-link curent" href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+              <li class="address-item">
+                <a class="address-link" href="tel:+110001111111"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+            </ul>
+          </address>
+
+          <ul class="messengers-list">
+            <li class="messengers-item">
+              <a href="#" class="messengers-link">
+                <svg class="icon" width="16" height="16">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="messengers-item">
+              <a href="#" class="messengers-link">
+                <svg class="icon" width="16" height="16">
+                  <use href="./images/icons.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="messengers-item">
+              <a href="#" class="messengers-link">
+                <svg class="icon" width="16" height="16">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="messengers-item">
+              <a href="#" class="messengers-link">
+                <svg class="icon" width="16" height="16">
+                  <use href="./images/icons.svg#icon-linkedin2"></use>
+                </svg>
+              </a>
             </li>
           </ul>
-        </address>
+        </div>
       </div>
     </header>
 
@@ -389,7 +460,7 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer none">
       <div class="container">
         <div class="footer-content">
           <a class="logo footer-logo" href="./index.html"
@@ -529,7 +600,7 @@
                   <use href="./images/icons.svg#icon-property-click"></use>
                 </svg>
               </span>
-              I accept the terms and conditions of the&nbsp;
+              I accept the terms and conditions of the
               <a class="policy-link" href="#"> Privacy Policy</a>
             </label>
           </div>

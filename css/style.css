@@ -19,6 +19,9 @@ p {
   padding: 0;
 }
 
+.none {
+  display: none !important;
+}
 .icon {
   display: inline-block;
   stroke-width: 0;
@@ -39,7 +42,7 @@ img {
 
 .container {
   max-width: 320px;
-  padding: 0 28px 0 28px;
+  padding: 0 16px 0 16px;
   margin: 0 auto;
 }
 
@@ -60,10 +63,6 @@ button {
   padding: 96px 0;
 }
 
-.none {
-  display: none;
-}
-
 /* HEADER */
 
 .header {
@@ -81,6 +80,8 @@ button {
 .header-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .logo {
@@ -88,7 +89,7 @@ button {
 }
 
 .header-links {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 
@@ -110,18 +111,6 @@ button {
   color: #404bbf !important;
 }
 
-.curent::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 4px;
-  background-color: #404bbf;
-  bottom: -1px;
-  left: 0;
-  border-radius: 2px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .header-link:hover,
 .header-link:focus {
   color: #404bbf;
@@ -133,6 +122,7 @@ button {
 
 .header-address {
   font-style: normal;
+  display: none;
 }
 
 .address-list {
@@ -172,10 +162,85 @@ button {
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: #4d5ae5;
+  padding: 16px 0;
 }
 
 .logo-web-color {
   color: #2e2f42;
+}
+
+.menu-btn-icon {
+  background-color: #fff;
+}
+
+/* =============== MODAL NAV ================ */
+
+.modal-nav {
+  width: 100%;
+  min-height: 640px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  padding-top: 72px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 40px;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-nav-content {
+  max-width: 288px;
+  margin: 0 auto;
+}
+
+.modal-nav-content .modal-close {
+  background-color: #fff;
+  top: 24px;
+  right: 24px;
+}
+
+.modal-nav-content .header-links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 168px;
+}
+
+.modal-nav-content .header-link {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 2%;
+  color: rgba(46, 47, 66, 1);
+  text-decoration: none;
+}
+
+.modal-nav-content .header-address {
+  margin-bottom: 48px;
+}
+
+.modal-nav-content .address-list {
+  flex-direction: column;
+  gap: 24px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 2%;
+}
+
+.modal-nav .header-address {
+  display: flex;
+}
+
+.modal-nav-content .messengers-list {
+  justify-content: space-around;
+  gap: 40px;
 }
 
 /* MAIN */
@@ -572,7 +637,6 @@ footer .logo-web-color {
 
 .modal {
   position: fixed;
-  width: 408px;
   top: 0;
   left: 0;
   background-color: rgba(46, 47, 66, 0.4);
@@ -590,11 +654,10 @@ footer .logo-web-color {
 
 .modal-content {
   background: #fcfcfc;
-  width: 408px;
+  min-width: 288px;
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
-  padding: 24px;
   min-height: 584px;
   display: flex;
   flex-direction: column;
@@ -602,7 +665,7 @@ footer .logo-web-color {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px 16px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -746,6 +809,13 @@ footer .logo-web-color {
 
 .modal-check {
   margin-bottom: 24px;
+  position: relative;
+}
+.span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .checkbox {
@@ -755,6 +825,8 @@ footer .logo-web-color {
 .modal-label-check {
   cursor: pointer;
   margin-bottom: 0;
+  margin-left: 24px;
+  letter-spacing: 0.04em;
 }
 
 .modal-label-check .span {
@@ -765,7 +837,6 @@ footer .logo-web-color {
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
-  margin-right: 8px;
   fill: transparent;
   overflow: hidden;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -815,7 +886,7 @@ footer .logo-web-color {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal.is-open {
+.is-open {
   opacity: 1;
   pointer-events: auto;
 }
@@ -823,6 +894,72 @@ footer .logo-web-color {
 /* 768PX */
 
 @media screen and (min-width: 768px) {
+  /* HEADER */
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .header-nav-links {
+    display: flex;
+  }
+
+  .header-nav .logo {
+    margin-right: 0;
+  }
+
+  .address-item {
+    line-height: 14px;
+  }
+
+  .address-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .address-link {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 4%;
+  }
+
+  .address-item {
+    display: inline-block;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .modal-nav {
+    display: none;
+  }
+
+  .header-links {
+    display: flex;
+  }
+
+  .header-address {
+    display: block;
+  }
+
+  .curent::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    bottom: -1px;
+    left: 0;
+    border-radius: 2px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .container {
     max-width: 736px;
     padding: 0;
@@ -934,6 +1071,13 @@ footer .logo-web-color {
   .footer-form-text {
     text-align: start;
   }
+
+  /* ================ MODAL ============== */
+
+  .modal-content {
+    min-width: 408px;
+    padding: 72px 24px 24px 24px;
+  }
 }
 
 /* ================================================ */
@@ -941,6 +1085,25 @@ footer .logo-web-color {
 /* 1440PX */
 
 @media screen and (min-width: 1440px) {
+  /* ================ HEADER ================ */
+
+  .header-nav {
+    justify-content: flex-start;
+  }
+
+  .header-nav .logo {
+    margin-right: 76px;
+  }
+
+  .header-address {
+    position: absolute;
+    right: 0;
+  }
+
+  .address-list {
+    flex-direction: row;
+  }
+
   .container {
     max-width: 1128px;
     padding: 0;
