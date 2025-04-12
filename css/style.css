@@ -1186,8 +1186,6 @@ footer .logo-web-color {
 
   @media screen and (min-resolution: 2x) {
     .title {
-      /* padding-top: 188px;
-      padding-bottom: 188px; */
       background-image: linear-gradient(
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
